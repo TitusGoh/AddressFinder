@@ -1,0 +1,138 @@
+openapi: 3.0.0
+info:
+  title: DynamicFormAPI
+  version: 1.0.0
+  description: API documentation for Dynamic Form
+
+servers:
+  - url: https://api.example.com/api
+
+paths:
+  /api/search/v1: # Updated path requested..
+    get:
+      summary: Search addresses by country or partial address
+      parameters:
+        - in: query
+          name: country
+          schema:
+            type: string
+          description: Filter addresses by country
+        - in: query
+          name: partialAddress
+          schema:
+            type: string
+          description: Filter addresses by partial address
+      responses:
+        '200':
+          description: Successfully retrieved filtered addresses
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Address'
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+
+  /api/update/v1/countries/{country}/address/{addressId}: # Updated path
+    put:
+      summary: Update address by country and address ID
+      parameters:
+        - in: path
+          name: country
+          required: true
+          description: Country of the address to update
+          schema:
+            type: string
+        - in: path
+          name: addressId
+          required: true
+          description: ID of the address to update
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Address'
+      responses:
+        '200':
+          description: Address updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Address'
+        '400':
+          description: Bad request
+        '404':
+          description: Address not found
+        '500':
+          description: Internal server error
+
+  /api/add/v1: # Updated path
+    post:
+      summary: Create a new address
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Address'
+      responses:
+        '200':
+          description: Address created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Address'
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    Address:
+      type: object
+      properties:
+        name:
+          type: string
+        houseNumberStreetNumber:
+          type: string
+        address:
+          type: string
+        neighborhood:
+          type: string
+        city:
+          type: string
+        provinceCode:
+          type: string
+        province:
+          type: string
+        country:
+          type: string
+        postalZip:
+          type: string
+        postalCode:
+          type: string
+        state:
+          type: string
+        prefecture:
+          type: string
+        district:
+          type: string
+        streetName:
+          type: string
+        houseNumber:
+          type: string
+        stateProvince:
+          type: string
+        addressLine1:
+          type: string
+        addressLine2:
+          type: string
+        zipCode:
+          type: string

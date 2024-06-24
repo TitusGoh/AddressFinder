@@ -1,0 +1,7 @@
+npm install
+npm install mongodb
+npm install mongoose
+npm install express
+npm install cors
+npm install react-select
+npm install concurrently

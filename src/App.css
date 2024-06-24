@@ -1,0 +1,288 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  font-size: calc(10px + 2vmin);
+  color: #ffffff;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Styling for the form and search components to make them visually distinct */
+.form-container, .search-container {
+  display: flex;
+  flex-direction:column;
+  gap: 2px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 30%; 
+  margin: 5px auto; 
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Optional: Adding a little more style to buttons and inputs */
+input, select, .react-select__control  {
+  padding: 12px;
+  margin-top: 10px;
+  margin-bottom: -5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 600px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+
+.input-field {
+  /* width: 100%; */
+  width: 600px;
+  border: 1px solid #ccc;
+  padding: 12px;
+}
+
+.input-field.error {
+  border-color:red;
+  border-width: 2px;
+}
+
+.error-message {
+  color: red;
+}
+
+
+button {
+  padding: 10px;
+  margin-top: 2px 0;
+  margin: 3px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  width: 32.1%; 
+  box-sizing: border-box;
+  background-color: #4CAF50; 
+  color: white;
+  cursor: pointer; 
+}
+
+button:hover {
+  background-color: #45a049; 
+}
+
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+.search-button, .submit-button, .reset-button {
+  width: 100px;
+}
+
+.select-button {
+  width: 100%;
+}
+
+.search-results {
+  margin: auto;
+  background-color: #f4f4f4; 
+}
+
+.search-results table {
+  text-align: left;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.search-results th {
+  background-color: #333;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  white-space: normal; 
+  padding: 20px;
+  /* max-width: 200px; */
+}
+
+.search-results td {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #333;
+  white-space: normal; 
+  padding: 12px;
+}
+
+.search-addressLine2 {
+  text-align: center;
+}
+
+.search-city {
+  text-align: center;
+}
+
+.search-state {
+  text-align: center;
+}
+
+.search-country {
+  text-align: center;
+}
+
+.search-postal {
+  text-align: center;
+}
+
+.search-results tr:nth-child(even) {
+  background-color: #e0e0e0; 
+}
+
+.search-results tr:nth-child(odd) {
+  background-color: #f4f4f4; 
+}
+
+.App .react-select__multi-value__label {
+  font-family: Arial, sans-serif !important;
+  font-size: 20px !important; 
+  color: #333 !important;
+}
+
+.react-select__control {
+  padding: 0 !important;
+  margin-top: 10px !important;
+  margin-bottom: -5px !important;
+  border-radius: 5px !important;
+  border: 1px solid #ccc !important;
+  width: 600px;
+  box-sizing: border-box !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 16px !important;
+  color: #333 !important;
+}
+
+/* Value container to handle overflow */
+.App .react-select__value-container {
+  display: flex;
+  /* padding: 3px; */
+  padding: 0 12px !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  align-items: center;
+
+}
+
+/* Menu (the dropdown options) */
+.App .react-select__menu {
+  max-width: 100% !important; 
+  margin: 0 auto !important;  
+}
+
+/* Option (each dropdown option) */
+.App .react-select__option {
+  color: #333 !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 20px !important;
+}
+
+/* Selected option */
+.App .react-select__option--is-selected {
+  background-color: #E6F0FF !important;
+  color: #333 !important;
+}
+
+/* Single Value (the selected value in the control) */
+.App .react-select__single-value {
+  color: #333 !important;
+}
+
+
+.select-container.error .react-select__control {
+  border-color: red !important;
+  border-width: 2px !important;
+}
+
+.country-select-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto; 
+  text-align: center; 
+  font-family: Arial, sans-serif !important;
+  font-size: 24px !important;
+  color: #333 !important;
+}
+
+
+.form-content {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 5px;
+} 
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 5px; 
+}
+
+.pagination button {
+  display: inline-block;
+  width: 80%;
+  max-width: 80px;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  background-color: #4CAF50; 
+  color: white;
+  cursor: pointer; 
+  font-size: 14px; 
+}
+
+.pagination button:hover {
+  background-color: #45a049; 
+}
+
+.pagination button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
